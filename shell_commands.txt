@@ -1,0 +1,36 @@
+/* This has all the Git commands */
+
+Cd . 	will take to the current directory
+Cd.. 	will take to the parent directory
+Start . 	will open the current folder in explorer
+Ls -la 	will show a list of files along with the hidden files
+Cd --help 	will give a help on a given command
+Touch 	 used to create a new file
+Echo 	used to print a value
+Echo "Hello world" > another-file.txt 	will write "Hello world" to the file
+Cat 	 used to read the contents of a file
+Echo "Another world" >> another-file.txt 	 will append "Another world" to the file
+Nano new-file.txt 	This will open the file in edit mode
+Ctrl+O + Enter	Save the contents of the file
+Ctrl + x	To exit
+Rm	Remove file
+Rm -rf	Remove folder and files within it
+
+--------------------------
+4 Object Types in GIT :
+Blob :  Git stores files
+Tree : Stores information about directories
+Commit : Stores different versions of the project
+Annotated Tag : It is a pointer to a specific commit
+
+--------------------------
+There are several HASH functions like MD5, SHA1, SHA256, SHA384,SHA512
+The length of the output a different for each of them
+Git uses SHA1 - 160 bit - Base 16 - Hex value
+HASH is one way (from HASH we cant get input) and for the same input , we always get same output
+2^160 	is the number of files that can be saved on a GIT repository
+Echo "Hello Git" |git hash-object --stdin -w	Creates a Hash-object with the standard input as "Hello , Git". It produces a hash output
+Git hash-object	It is used to create a new Hash Object
+Git cat-file -p <hash>	Contents of the Object
+Git cat-file -s <hash>	Size of the Object
+Git cat-file -t <hash>	Type of the Object
