@@ -1,1 +1,59 @@
-git init :  Fi initializing a GIT repository
+--------- ------------------------------------------------------------------------------------
+git init         |  For initializing an empty GIT repository. This will create a new hidden folder called .git
+---------------------------------------------------------------------------------------------
+Git Object Types | BLOB, ANNOTATED TAG, COMMIT, TREE
+----------------------------------------------------------------------------------------------
+BLOB             | Represents the files
+----------------------------------------------------------------------------------------------
+ANNOTATED TAG    | It is a pointer to a specific commit
+----------------------------------------------------------------------------------------------
+COMMIT           | Stores different versions of the project
+----------------------------------------------------------------------------------------------
+TREE             | Stroes information about directories. It can be a set of BLOBS and TREES
+----------------------------------------------------------------------------------------------
+echo "Hello, Git" | git hash-object --stdin -w => output of echo , i.e Hello, Git are taken as input to git hash-object and used to create a new hash object (-w)
+----------------------------------------------------------------------------------------------
+git hash-object  | This is used to create a new object in GIT and it is created in the "objects" folder.
+----------------------------------------------------------------------------------------------
+Hash Function    | Takes variable length input and produces fixed lenght output. They are one-way function. (From Hash, we cant get i/p).
+                   Same input will always give the same Hash value
+----------------------------------------------------------------------------------------------
+Type of Hash func| MD5 (128 bit long), SHA1 (160 bit long), SHA 256 (256 bit long), SHA 384 (384 bit long), SHA 512 (512 bit long)
+----------------------------------------------------------------------------------------------
+**Git uses SHA1**
+----------------------------------------------------------------------------------------------
+SHA1             | 160 bit long. represented by 40 hexadecimal charecters
+----------------------------------------------------------------------------------------------
+shasum           | Generate Hash values in command line
+----------------------------------------------------------------------------------------------
+echo "Hello, Git" | shasum => will generate a 40 digit 160 bit hash value
+----------------------------------------------------------------------------------------------
+How many git files can be stored in the same repository ? : 2^160 since the length of a SHA1 hash is 160 bits and with Base 2 its 0 or 1 hence 2^160
+----------------------------------------------------------------------------------------------
+What are the chances of producing the same hash  for 2 different files ? : 1/2^160 *1/2^160 = 1/2^320 = 0.  96 zeros
+----------------------------------------------------------------------------------------------
+git cat-file           | Read the contents of any object in a Git repository
+----------------------------------------------------------------------------------------------
+git cat-file -p <hash> | Contents of the Object
+----------------------------------------------------------------------------------------------
+git cat-file -s <hash> | Size of the Object
+----------------------------------------------------------------------------------------------
+git cat-file -t <hash> | Type of the Object
+----------------------------------------------------------------------------------------------
+git hash-object ../new-file.txt -w | Create a new object with file name
+----------------------------------------------------------------------------------------------
+Objects created in Git are independent of file system. Git has its own database
+----------------------------------------------------------------------------------------------
+Git blobs dont store file name. It stores the name of the hash value
+----------------------------------------------------------------------------------------------
+The size and type of the object are saved in each blob
+----------------------------------------------------------------------------------------------
+Git generates SHA1 Hash based on input + type + size 
+----------------------------------------------------------------------------------------------
+****** HASH  = Content + Type + Length + Delimeter ******
+----------------------------------------------------------------------------------------------
+echo -e "blob 11\0Hello, Git" |shasum => gives the same output as echo "Hello, Git" | git hash-object --stdin -w  
+----------------------------------------------------------------------------------------------
+TREE : A tree contains PERMISSION + (whether its a tree/blob) + SHA1 Hash + name of the file/directory
+----------------------------------------------------------------------------------------------
+Permission for tree | 040000 => directories, 100644 =>Regular Non-executable file
