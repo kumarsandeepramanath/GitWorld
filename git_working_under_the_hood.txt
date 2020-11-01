@@ -50,10 +50,31 @@ The size and type of the object are saved in each blob
 ----------------------------------------------------------------------------------------------
 Git generates SHA1 Hash based on input + type + size 
 ----------------------------------------------------------------------------------------------
-****** HASH  = Content + Type + Length + Delimeter ******
+****** HASH  = Content + Type + Length + Delimeter ****** => This is true for any GIT OBJECT
 ----------------------------------------------------------------------------------------------
 echo -e "blob 11\0Hello, Git" |shasum => gives the same output as echo "Hello, Git" | git hash-object --stdin -w  
 ----------------------------------------------------------------------------------------------
 TREE : A tree contains PERMISSION + (whether its a tree/blob) + SHA1 Hash + name of the file/directory
 ----------------------------------------------------------------------------------------------
 Permission for tree | 040000 => directories, 100644 =>Regular Non-executable file
+----------------------------------------------------------------------------------------------
+git mk tree | Create a tree
+----------------------------------------------------------------------------------------------
+find .git/objects -type f | This is used to find all the files in a folder
+----------------------------------------------------------------------------------------------
+cat ../temp-tree.txt | git mktree => The temp-tree.txt file is used as an input to the mktree file and the temp-tree.txt had info on 2 blobs
+----------------------------------------------------------------------------------------------
+
+3 areas where files in GIT reside
+=================================
+
+1. Working Directory    | Files which are present locally
+2. Staging area (index) | Mandatorily used as an intermediate betweem working and GIT repository    
+3. Git repository       | All files are saved in the name of SHA1 Hash of the object
+
+----------------------------------------------------------------------------------------------
+git ls-files -s         | Used to see the files in the staging area
+git read-tree <hash>    | Put the content from git repository to staging
+git checkout-index -a  | Puts the files from staging to working directory
+
+There can be a maximum of 256 folders in a .git/objects folder
