@@ -46,15 +46,21 @@ Objects created in Git are independent of file system. Git has its own database
 ----------------------------------------------------------------------------------------------
 Git blobs dont store file name. It stores the name of the hash value
 ----------------------------------------------------------------------------------------------
-The size and type of the object are saved in each blob
+BLOB's HASH  = Content (Ex. Hello, Git) + Type (BLOB) + Length (11) + Delimeter (\0  i.e Null charecter) = GIT Object Content
 ----------------------------------------------------------------------------------------------
-Git generates SHA1 Hash based on input + type + size 
+****** Git generates SHA1 Hash based on input + type + size *****
 ----------------------------------------------------------------------------------------------
 ****** HASH  = Content + Type + Length + Delimeter ****** => This is true for any GIT OBJECT
 ----------------------------------------------------------------------------------------------
 echo -e "blob 11\0Hello, Git" |shasum => gives the same output as echo "Hello, Git" | git hash-object --stdin -w  
 ----------------------------------------------------------------------------------------------
-TREE : A tree contains PERMISSION + (whether its a tree/blob) + SHA1 Hash + name of the file/directory
+TREE : A contents of the tree contains PERMISSION + (whether its a tree/blob) + SHA1 Hash + name of the file/directory
+----------------------------------------------------------------------------------------------
+TREE's HASH  = Content (Ex. PERMISSION + (whether its a tree/blob) + SHA1 Hash + name of the file/directory) + Type (BLOB) + Length (11) + Delimeter (\0  i.e Null charecter) = GIT Object Content
+----------------------------------------------------------------------------------------------
+Contents of the Tree : 
+100644 blob b7asdasdadadau8282392naadada file1.txt
+100644 blob 4400aee5adadau8282392naadhaw file2.txt
 ----------------------------------------------------------------------------------------------
 Permission for tree | 040000 => directories, 100644 =>Regular Non-executable file
 ----------------------------------------------------------------------------------------------
