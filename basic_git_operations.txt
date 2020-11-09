@@ -42,7 +42,7 @@ UnModified -> Modified   | Any file that is in STAGING or in GIT REPOSITORY, if 
 Modified   -> Staged     | "git add" does it and moves from Modified to STAGING AREA
 UnModified -> UnTracked  | Removes tracking of files if they are added by mistake
 ----------------------------------------------------------------------------------------------
-
+git rm --cached file3.txt | Removes the file from STAGING area and makes it UNTRACKED
 ----------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------
