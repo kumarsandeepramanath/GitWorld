@@ -16,15 +16,31 @@ git config --global user.name <Name>
 git config --global user.email <Email>
 git config --list
 ----------------------------------------------------------------------------------------------
-aa
+git commit -m "<Description> | This is used to commit the changes from Working to GIT repository
 ----------------------------------------------------------------------------------------------
-aa
-----------------------------------------------------------------------------------------------
+$ git cat-file -p f4781 # To get the contents of the commit
+tree 3b95df0ac6365c72e9b0ff6c449645c87e6e1159 # Says its a TREE + HASH OF THE TREE ( COMMIT IS A WRAPPER AROUND TREE)
+author Kumar Sandeep Ramanath <kumarsandeepr89@gmail.com> 1604918914 +0530  # Author
+committer Kumar Sandeep Ramanath <kumarsandeepr89@gmail.com> 1604918914 +0530 # Committer
 
 ----------------------------------------------------------------------------------------------
-
+git status   | Current state of the GIT repository
+git add      | Takes the files from WORKING DIRECTORY and adds file to STAGING AREA
+git commit   | Write changes to GIT REPOSITORY
+git log      | History of changes
+git checkout | Checkout commit or branch  i.e takes from GIT REPOSITORY and placed into WORKING DIRECTORY
 ----------------------------------------------------------------------------------------------
-
+Git Tracking Status :
+UnTracked
+Modified
+Staged
+UnModified
+----------------------------------------------------------------------------------------------
+Untracked  -> Staged     | "git add"    does this and also start tracking new file. It is moving from WORKING DIRECTORY to STAGING AREA
+Staged     -> UnModified | "git commit" does this and also moves from STAGED to UNMODIFIED state
+UnModified -> Modified   | Any file that is in STAGING or in GIT REPOSITORY, if it is modified, then it moves from UnModified state to Modified
+Modified   -> Staged     | "git add" does it and moves from Modified to STAGING AREA
+UnModified -> UnTracked  | Removes tracking of files if they are added by mistake
 ----------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------

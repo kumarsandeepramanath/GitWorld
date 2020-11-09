@@ -79,7 +79,7 @@ cat ../temp-tree.txt | git mktree => The temp-tree.txt file is used as an input 
 3. Git repository       | All files are saved in the name of SHA1 Hash of the object
 
 ----------------------------------------------------------------------------------------------
-git ls-files -s         | Used to see the files in the staging area
+git ls-files -s         | Used to see the files in the STAGING AREA
 git read-tree <hash>    | Put the content from git repository to staging
 git checkout-index -a  | Puts the files from staging to working directory
 
