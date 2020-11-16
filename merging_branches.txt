@@ -1,0 +1,22 @@
+Types of Merges :
+===============
+Fast forward Merge | This merge is possible when there are no further commits in the receiving branch 
+                     after the commit where the feature branch is created
+Three-way Merge    | 
+----------------------------------------------------------------------------------------------
+Steps for Fast-forward Merge :
+1. Checkout the MASTER branch
+2. Choose which branch you want to merge to MASTER
+3. If the Fast-forward merge is done, the pointer of (MASTER + HEAD) is moved from MASTER branch to FEATURE branch
+4. After merging , DELETE the feature branch
+----------------------------------------------------------------------------------------------
+It moves the branch pointer from one commit to another commit 
+----------------------------------------------------------------------------------------------
+MERGING PROCESS
+===============
+1. Create a new feature branch from the main branch
+2. Make changes in the new branch and commit
+3. Checkout main branch (receiving branch)
+4. Merge feature branch to the currrent receiving branch
+
+git merge <feature-branch>

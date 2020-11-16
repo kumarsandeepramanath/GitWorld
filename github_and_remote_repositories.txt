@@ -1,0 +1,2 @@
+Tree in Github URL does not represent a Git tree object.
+Instead it is just a pointer to a specific branch or commit.
