@@ -1,0 +1,32 @@
+$ git diff
+diff --git a/update_list.py b/update_list.py
+index 996e87c..b7ce67a 100755
+--- a/update_list.py
++++ b/update_list.py
+@@ -6,6 +6,8 @@ from urllib.parse import quote
+ import re
+
+
++
++
+ def regexReplace(string, search, replacement):
+     return re.compile(search).sub(replacement, string)
+
+@@ -32,3 +34,5 @@ readmeContents = open('README.md', 'r', encoding="utf-8").read()
+
+ open('README.md', 'w', encoding="utf-8").write(regexReplace(
+     readmeContents, r"<!--Languages start-->(.|\n)*<!--Languages end-->", result))
++
++#End of the file
+\ No newline at end of file
+
+In line 6, 
+           In -6,6 =>
+           -6 means => 1st file, 6 refers to the start section in 1st file where there are changes
+            6 means => number of lines of a section
+
+           In +6,8 =>
+           +6 means => 2nd file, 6 refers to the start section in 2nd file where there are changes 
+           8 means  => number of lines of a section
+----------------------------------------------------------------------------------------------
+git commit -m "<Commit message" -a  => Used to add files to staging area and also commit
