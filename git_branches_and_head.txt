@@ -11,22 +11,29 @@ If during "git commit" , -m is ommited, then it will take to vim editor
 Press "i" to enter insert mode to add a commit message
 To exit, press ":wq"
 ----------------------------------------------------------------------------------------------
-** Even after git commit -m "<Deleted all 3 files>" the Repository still has all the files. If you go to .git/objects, all the objects would be visible
-the blobs (file1.txt, file2.txt, file3.txt are not deleted from the Git repository) **
+** Even after git commit -m "<Deleted all 3 files>" the Repository still has all the files. 
+If you go to .git/objects, all the objects would be visible the blobs (file1.txt, file2.txt, file3.txt are not deleted from the Git repository) **
 
 They are just deleted as part of commit and hence that tree would be empty
 ----------------------------------------------------------------------------------------------
-  
+git checkout | Takes the specific snapshot from GIT repository and places it in STAGING and WORKING DIRECTORY
+Under the hood, GIT moves the head pointer to a specific commit
 ----------------------------------------------------------------------------------------------
-
+Detached HEAD | When the HEAD points to a commit instead of a specific branch 
 ----------------------------------------------------------------------------------------------
-
+By moving the HEAD, we moved to a specific version or specific snapshot of the project
 ----------------------------------------------------------------------------------------------
-
+BRANCHES | It is a separate history of a project
 ----------------------------------------------------------------------------------------------
-
+We checkout with BRANCHES rather than commits because, we dont have to remember the SHA1 Hash value. 
+If we add new commits in Detached HEAD (commits), if we move the HEAD, all the commits on that Detached HEAD are lost
 ----------------------------------------------------------------------------------------------
-
+git branch                              | Gives a list of all the local branches and * is marked for the current branch
+git branch <branch_name>                | Creates a new branch with name <branch_name>
+git checkout <branch_name>              | Checks-out or moves to the new branch
+git branch -m <old_branch> <new_branch> | Renames a branch from <old_branch> to <new_branch>
+git branch -d <branch_name>             | Deletes the branch with name <branch_name>
+git checkout -b <branch_name>           | Creates a new branch <branch_name> and also Checks out , i.e points to the new branch
 ----------------------------------------------------------------------------------------------
-
+Git reuses blobs if the contents are same even if the file names are different
 ----------------------------------------------------------------------------------------------
