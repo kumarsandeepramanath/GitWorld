@@ -1,0 +1,32 @@
+HEAD | It is the current snapshot of the project
+HEAD | Is a "reference" to currently checked-out branch or commit   
+HEAD | It is locally significant
+HEAD by default points to ".git/HEAD"
+The contents of the ".git/HEAD" is "ref: refs/heads/master"
+----------------------------------------------------------------------------------------------
+Change the reference to a specific branch with "git checkout <branch_name>"
+Change the reference to a specific commit with "git checkout <sha1>"
+----------------------------------------------------------------------------------------------
+If during "git commit" , -m is ommited, then it will take to vim editor
+Press "i" to enter insert mode to add a commit message
+To exit, press ":wq"
+----------------------------------------------------------------------------------------------
+** Even after git commit -m "<Deleted all 3 files>" the Repository still has all the files. If you go to .git/objects, all the objects would be visible
+the blobs (file1.txt, file2.txt, file3.txt are not deleted from the Git repository) **
+
+They are just deleted as part of commit and hence that tree would be empty
+----------------------------------------------------------------------------------------------
+  
+----------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------
