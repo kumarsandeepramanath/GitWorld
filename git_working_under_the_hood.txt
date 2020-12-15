@@ -43,7 +43,7 @@ git cat-file -t <hash> | Type of the Object
 git hash-object ../new-file.txt -w | Create a new object with file name
 ----------------------------------------------------------------------------------------------
 Objects created in Git are independent of file system. Git has its own database
-----------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------t--------------
 Git blobs dont store file name. It stores the name of the hash value
 ----------------------------------------------------------------------------------------------
 BLOB's HASH  = Content (Ex. Hello, Git) + Type (BLOB) + Length (11) + Delimeter (\0  i.e Null charecter) = GIT Object Content
@@ -83,4 +83,4 @@ git ls-files -s         | Used to see the files in the STAGING AREA
 git read-tree <hash>    | Put the content from git repository to staging
 git checkout-index -a  | Puts the files from staging to working directory
 
-There can be a maximum of 256 folders in a .git/objects folder
+There can be a maximum of 256 folders in a .git/objects folder i.e 16 (hexadecimal digits) *16=256

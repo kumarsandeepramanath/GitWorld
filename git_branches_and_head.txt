@@ -4,6 +4,9 @@ HEAD | It is locally significant
 HEAD by default points to ".git/HEAD"
 The contents of the ".git/HEAD" is "ref: refs/heads/master"
 ----------------------------------------------------------------------------------------------
+Suppose we delete 3 files in the staging area.
+Then if it has to be moved to staging area, you still have to do a "git add ."
+----------------------------------------------------------------------------------------------
 Change the reference to a specific branch with "git checkout <branch_name>"
 Change the reference to a specific commit with "git checkout <sha1>"
 ----------------------------------------------------------------------------------------------
@@ -12,14 +15,20 @@ Press "i" to enter insert mode to add a commit message
 To exit, press ":wq"
 ----------------------------------------------------------------------------------------------
 ** Even after git commit -m "<Deleted all 3 files>" the Repository still has all the files. 
-If you go to .git/objects, all the objects would be visible the blobs (file1.txt, file2.txt, file3.txt are not deleted from the Git repository) **
+If you go to .git/objects, all the objects would be visible the blobs 
+(file1.txt, file2.txt, file3.txt are not deleted from the Git repository) **
 
 They are just deleted as part of commit and hence that tree would be empty
+Even after deleting the files in the WORKING DIRECTORY and in STAGING AREA, the Git Repository will 
+have files (Object folders will have reference to the objects created)
 ----------------------------------------------------------------------------------------------
-git checkout | Takes the specific snapshot from GIT repository and places it in STAGING and WORKING DIRECTORY
+git checkout |  It is used to move to a specific version of the project.
+It moves the HEAD to another branch
+Takes the specific snapshot from GIT repository and places it in STAGING and WORKING DIRECTORY
 Under the hood, GIT moves the head pointer to a specific commit
 ----------------------------------------------------------------------------------------------
 Detached HEAD | When the HEAD points to a commit instead of a specific branch 
+If we have 3 commits and if we checkout (move HEAD) to the 2nd commit, we will not be able to see any information related to 3rd commit
 ----------------------------------------------------------------------------------------------
 By moving the HEAD, we moved to a specific version or specific snapshot of the project
 ----------------------------------------------------------------------------------------------
