@@ -1,0 +1,59 @@
+git fetch : Fetches the update from Remote repository to local GIT REPOSITORY. 
+            It does not change the LOCAL or STAGING area
+---------------------------------------------------------------------------------------------------------------------
+git pull  : Merges changes from REMOTE REPOSITORY to WORKING DIRECTORY + STAGING AREA
+git pull  = git fetch + git merge
+Merge is a local activity and we dont involve REMOQ REPOSITORY
+---------------------------------------------------------------------------------------------------------------------
+How the LOCAL REPOSITORY is connected to REMOTE REPOSITORY ? :
+Ans. When we clone the contents from REMOTE REPOSITORY to the LOCAL, there is a bi-link created
+     It creates a default remote repository for a local repository.
+     ********Its default name is ORIGIN. So ORIGIN refers to the REMOTE REPOSITORY***********
+---------------------------------------------------------------------------------------------------------------------
+git remote : Lists all the remote repositories
+---------------------------------------------------------------------------------------------------------------------
+By default, after cloning, only the default branch i.e master/main branch will be visible. 
+Other branches would not be visible
+---------------------------------------------------------------------------------------------------------------------
+git branch -a : To see a list of all the branches
+By default, after cloning, only MASTER branch is the tracking branch
+---------------------------------------------------------------------------------------------------------------------
+Tracking branch | Such branches in LOCAL that are connected to the corresponding branch in REMOTE REPOSITORY
+git branch -vv  | See a list of the tracking branches
+---------------------------------------------------------------------------------------------------------------------
+git remote show origin | It shows the connection between local and remote branches
+---------------------------------------------------------------------------------------------------------------------
+Assume we create a new branch in Remote repository ex. temp1. Then if we see the branche in local , 
+we will not see it until we do a git fetch
+---------------------------------------------------------------------------------------------------------------------
+Git pull | Merges remote branch into current local branch. local branch should track remote branch
+---------------------------------------------------------------------------------------------------------------------
+git branch -vv : Check if there is a local branch and its corresponding Remote branch
+---------------------------------------------------------------------------------------------------------------------
+In git pull, local branch is a recceiving branch and it has to be checkout out first.
+git compares the HASH value of local branch and the remote branch. If the HASH are same, it means all folders up-to-date
+---------------------------------------------------------------------------------------------------------------------
+FETCH_HEAD | It contains HASH, branch name of the REMOTE REPOSITORY
+---------------------------------------------------------------------------------------------------------------------
+When a git pull is done, the local repository will also try to upload the changes to REMOTE REPOSITORY.
+Then it will do a git fetch , and get the contents from REMOTE REPOSITORY to local using git merge
+---------------------------------------------------------------------------------------------------------------------
+After "git fetch", local GIT has created remote commit object in the local GIT repository, but we have not yet merged 
+this commit to the local branch.During the "git fetch" local Git downloads all the new Git objects such as 
+commits, blobs and trees that were creatednin tracking remote branches in the remote repository and re-creates them
+in the local Git repository
+---------------------------------------------------------------------------------------------------------------------
+After "git fetch" Git creates same objects in the repository as were created in the remote repository after last fetch
+
+Thats why after fetch you are able to merge downloaded changes into your local branches without 
+interaction with remote repository
+---------------------------------------------------------------------------------------------------------------------
+ **Create a REMOTE BRANCH based on the LOCAl BRANCH**
+ git push --set-upstream origin feature-2 or git push -u origin feature-2
+To push the current branch and set the remote as upstream, and then in "origin" i.e remote branch, create "feature-2" as branch name in the remote branch
+---------------------------------------------------------------------------------------------------------------------
+git remote update origin --prune : Deletes reference to the remote branch 
+---------------------------------------------------------------------------------------------------------------------
+git push origin -d temp : Delete a remote branch from local terminal
+---------------------------------------------------------------------------------------------------------------------
+git show-ref : List of all the referenes to the branches. If the HASH of the commit is different, it means commits are different in origin and local

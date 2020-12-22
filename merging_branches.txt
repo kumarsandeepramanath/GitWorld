@@ -1,6 +1,6 @@
 Types of Merges :
 ===============
-Fast forward Merge | This merge is possible when there are no further commits in the receiving branch 
+Fast forward Merge | This merge is possible when there are no further commits in the receiving branch (MAIN/MASTER)
                      after the commit where the feature branch is created
 Three-way Merge    | 
 ----------------------------------------------------------------------------------------------
@@ -20,3 +20,33 @@ MERGING PROCESS
 4. Merge feature branch to the currrent receiving branch
 
 git merge <feature-branch>
+
+3-way merge: MC - Master Commit, FC -> FEATURE branch commit
+===========
+                                  HEAD
+                                   | 
+            Ancestor             MASTER
+              |                    |
+MC1 -> MC2 -> MC3 ->MC4 -> MC5 ->New Merge Commit
+              ^                    |
+              |                    |
+               FC1 -> FC2 -> FC3 <-|
+
+Suppose there are a total of 5 commits in MASTER.
+The FEATURE branch was created from the MASTER after the 3rd commit. 
+So there are 2 more commits after the feature branch was developed.
+The place from where the feature branch was created is called Ancestor(This is in MASTER branch)
+Assume 3 commits are made in the FEATURE branch.
+
+There will be a new MERGE Commit created after the last commit in MASTER. 
+It will also point to last commit of FEATURE branch
+Then the feature branch can be created
+
+-------------------------------------------------------------------------------------------------------
+Merge Conflicts : Same files were edited in different branches
+It happens when there are additional changes in the receiving branch after creating the FEATURE BRANCH.
+=============== 
+When a MERGE CONFLICT happens, then the STAGING AREA has the changes which were in MASTER BRANCH and FEATURE BRANCH
+CTRL +K = Used to delete lines in NANO EDITOR
+
+Bitbucket is another repository hosting service like GITHUB
