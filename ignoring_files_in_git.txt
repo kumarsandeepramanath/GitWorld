@@ -1,0 +1,29 @@
+The files that need to be ignored need to be placed in the .gitignore file and it should be in the root folder
+gitignore file should be commited
+If any file is added in the .gitignore, then such files are not pushed to remote repository 
+---------------------------------------------------------------------------------------------------------------------
+push an existing repository from the command line
+git remote add origin https://github.com/sandeepgithubber/gitignore.git
+git branch -M main
+git push -u origin main
+---------------------------------------------------------------------------------------------------------------------
+Ignore previously commited file :
+1. Add ignore rule to .gitignore
+2. Delete file in working directory
+3. Commit changes
+4. Add again previously deleted file
+---------------------------------------------------------------------------------------------------------------------
+Approach 2 : If you want to keep the file in the working directory without deletion :
+1. Add the required file in .gitignore
+2. git rm --cached new-file.txt
+---------------------------------------------------------------------------------------------------------------------
+Best practices for .gitignore :
+build folders like /bin
+dependency modules like node_modules/
+compiled and log files like *.pyc , *.log
+hidden OS files like Thumbs.db, .DS_Store
+---------------------------------------------------------------------------------------------------------------------
+gitignore.io | Place to find template for .gitignore files
+---------------------------------------------------------------------------------------------------------------------
+There is a gitignore repository
+---------------------------------------------------------------------------------------------------------------------

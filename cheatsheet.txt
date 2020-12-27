@@ -1,0 +1,7 @@
+git fetch upstream       | Fetch the change from the upstream(Not from origin but from upstream)
+
+What if I am working on some feature. 
+Another person is also workin on that feature.
+I have developed 90%
+I then realize, I have to take changes from person2 changes into my code and then continue working
+Then I would need to send a PR after my code is complete
