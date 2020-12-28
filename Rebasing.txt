@@ -1,0 +1,22 @@
+Rebasing |It is the technique of merging 2 branches or more
+It rewrites history
+It does not keep the entire history of all the commits
+---------------------------------------------------------------------------------------------------------------------
+Rebasing steps :
+(STEP1)
+git checkout feature1
+git rebase main
+
+With this, the feature1 is checkedout.
+Then the feature1 is rebased to main
+(STEP2)
+git checkout main
+git merge feature1
+
+When a Rebasing is done, the Feature branch is copied to the end of Master branch
+---------------------------------------------------------------------------------------------------------------------
+In Rebasing, git adds all the commits of the feature1 branch after all the commits in the main branch
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
