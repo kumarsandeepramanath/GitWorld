@@ -1,0 +1,6 @@
+Experimental commits can be made in DETACHED HEAD state
+Ex. Assume the HEAD is currently pointnig to master and this is the last commit
+Now, if we move to another commit using "git checkout <SHA1>", it means we are moving to a DETACHED HEAD state
+If we create a few more commits from that commit and then if we move the HEAD back(checkout) to master, we will loose out all
+the changes that were done as part of new commits 
+If we create a new branch in the DETACHED HEAD state, then such commits can be preserved

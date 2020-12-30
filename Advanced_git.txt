@@ -1,0 +1,13 @@
+git log --oneline | Used to display the log file in 1 line per commit
+git log --author="Kumar Sandeep Ramanath" --oneline | Filter logs based on author
+git log --grep="first commit" |Will display such a commit with a message "first commit" in it
+
+git reset 1bd95904 | If we do we git reset with a particular commit, all the later commits are ignored
+However, these changes are available in untracked stage
+Changes were removed from Staging area
+Reset is done only in local repository
+
+git reset --soft <SHA1> | 
+Discard commit
+Discard changes in staging area (index)
+Keep changes in working directory
