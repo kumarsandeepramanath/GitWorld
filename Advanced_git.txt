@@ -7,7 +7,58 @@ However, these changes are available in untracked stage
 Changes were removed from Staging area
 Reset is done only in local repository
 
+git reset <SHA1> | 
+Discard commit
+Discard changes in staging area (index)
+Keep changes in working directory
+
 git reset --soft <SHA1> | 
 Discard commit
 Discard changes in staging area (index)
 Keep changes in working directory
+
+git reset --hard <SHA1> | 
+Discard commit
+Discard changes in staging area (index)
+Discard changes in working directory
+
+But once a git pull is done, all the changes will be reverted
+
+git revert <SHA1> | It reverts the changes done in the previous commit and it also creates a new commit.
+Assume 2 changes were made in "1bd95904" commit, then these changes will be reverted in that commit.
+
+git commit --amend -m "Message changed" | It is used to make changes in the last commit
+git commit --amend --author "Message changed" | It is used to make changes in the last commit
+
+Cherry Pick | It is used to cherry pick any commit and insert into the current branch as a last commit.
+Assume, we are working on a feature branch and we want that one feature to add it into the Master/Main branch
+Assume we are in DETACHED HEAD state, we have to take a feature and merge to Master/Main
+
+git cherry-pick dd673f2447 | This will pick the changes from the commit and place the changes in the checkedout branch
+Here we did changes in the temp branch.
+Then we did a git log, took the SHA1 of the commit we did
+We switched to the dev branch, git cherry-pick dd673f2447, then the changes we did also applied to the dev branch
+
+Stashing | Assume we are working on temp branch, we have made some changes, then we have also put them on staging but we have not commited thhe changes
+Now if we want to move to Ex. temp2 branch, we can stash the changes of the temp branch(save).
+Then once we come back to temp branch, we can continue working since we were able to retrieve changes.
+
+Steps
+-----
+1. checkout temp branch
+2. Make changes in the temp branch
+3. git stash
+4. checkout dev branch
+5. work on what is needed on dev branch
+6. checkout temp branch
+7. git stash pop
+
+Squashing commits | Merging multiple commits into 1 commit
+Steps:
+------
+1. Create a feature1 branch
+2. Make multiple commits
+3. commit changes and push the changes to remote repository
+4. Create a pull requet to merge these changes to Master
+5. Now instead of "Merging Pull Request", there is an option to "Squash and Merge" which merges all the commits into 1 commit
+
